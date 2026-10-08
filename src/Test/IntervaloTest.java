@@ -82,19 +82,18 @@ public class IntervaloTest {
         );
     }
 
+    @Test
+    @DisplayName("Teste de texto no formato HH:MM:SS")
+    public void TesteFormatoTexto(){
+        Intervalo intervalo = new Intervalo(1,32,24);
+        Intervalo intervaloComZeros = new Intervalo(0,5,7);
+        Intervalo intervaloNormalizado = new Intervalo(2,59,60);
 
+        Assertions.assertAll(
+                () -> Assertions.assertEquals("01:32:24", intervalo.toString()),
+                () -> Assertions.assertEquals("00:05:07", intervaloComZeros.toString()),
+                () -> Assertions.assertEquals("03:00:00", intervaloNormalizado.toString())
+        );
+    }
 
 }
-
-
-
-/*
-* Assertions.assertThrows(RuntimeException.class,() -> moto.acelera(-1));
-*  Assertions.assertAll(
-                () -> Assertions.assertEquals(0, moto.getVelocidade()),
-                () -> Assertions.assertDoesNotThrow(() -> moto.acelera(20)),
-                () -> Assertions.assertEquals(20, moto.getVelocidade())
-        );
-*
-*
-* */

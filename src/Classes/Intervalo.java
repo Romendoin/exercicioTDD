@@ -34,7 +34,8 @@ public class Intervalo {
         return this.tempo == intervaloIgual.getTotalSegundos();
     }
 
-
-
-
+    @Override
+    public String toString(){
+        return String.format("%02d:%02d:%02d", getHoras(), getMinutos(), getSegundos());
+    }
 }
